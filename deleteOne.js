@@ -1,8 +1,8 @@
-const {MongoClient} = require('mongodb');
+require('dotenv').config();
 
-//MongoDBで作成したDBのURI（接続情報）
-const uri = "URI";
-
+// 接続情報を設定
+const { MongoClient } = require("mongodb");
+const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
 async function run(){
